@@ -4,6 +4,7 @@ console.log('STUDYING WORKS: v'+version);
 
 // Add links
 var courses = ["ap-chem", "ap-calc", "ap-lang", "apush", "ap-physics"];
+var existingPages = ["home"];
 const unitsPerCourse = 9;
 for(let i = 0; i < courses.length; i++) {
     // Get ID
@@ -15,12 +16,24 @@ for(let i = 0; i < courses.length; i++) {
         let thisj = j;
         let thiscoursename = courses[i];
         let pgtoload = thiscoursename+"-"+(j+1);
+        existingPages.push(pgtoload);
         thisunitlk.id = "lk-"+courses[i]+"-"+(j+1);
         thisunitlk.innerText = content;
         thisunitlk.dataset.pgtoload = pgtoload;
         thislk.append(thisunitlk);
         thisunitlk.onclick = function() {
             try {
+                // Hide existing pages
+                for(let i = 0; i < existingPages.length; i++) {
+                    try {
+                        if(document.getElementById('pg-'+existingPages[i]).style.display != 'none') {
+                            document.getElementById('pg-'+existingPages[i]).style.display = 'none';
+                        }
+                    } catch(err) {
+                        // Pg does not exist
+                    }
+                }
+                // Show this page
                 var divtoload = document.getElementById('pg-'+thisunitlk.dataset.pgtoload);
                 divtoload.style.display = 'block';
                 console.log('Page loaded: pg-'+thisunitlk.dataset.pgtoload);
