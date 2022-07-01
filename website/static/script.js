@@ -76,12 +76,12 @@ for(let i = 0; i < courses.length; i++) {
                     var divtoload2 = document.getElementById('pg-'+thisunitlk.dataset.pgtoload+'-links');
                     // Append
                     let thissectionlk = document.createElement('span');
-                    thissectionlk.innerHTML = ''
                     let vidurl = 'https://www.youtube.com/channel/UC-9IyDlMjLaLFhD1VJpfBpg';
                     if(thesesections[t].url != 'none') {
                         vidurl = thesesections[t].url;
                     }
-                    +'<a href="'+vidurl+'" class="link">Section 1.'+t+'</a>: '+thesesections[t].name;
+                    thissectionlk.innerHTML = ''
+                    +'<a href="'+vidurl+'" class="link">Section 1.'+(t+1)+'</a>: '+thesesections[t].name+'<br>';
                     +''
                     divtoload2.append(thissectionlk);
                 } catch(err) {
