@@ -5,7 +5,7 @@
 
 body {
     margin:0px;
-    background-color:#2d7d82;
+    background-color:#2d7d82/*#112032*/;
 }
 
 h1 {
@@ -17,7 +17,7 @@ h1 {
 }
 
 h2 {
-    color:#2d7d82;
+    color:#2d7d82 /* #d71e00 */;
     font-size: 13px;
     font-family: 'Segoe UI';
     margin-left: 0px;
@@ -28,6 +28,13 @@ h2 {
 .span {
     font-size: 12px;
     font-family: 'Segoe UI';
+}
+
+hr {
+    color:white;
+    background:none;
+    border-color:white;
+    border-style:solid;
 }
 
 /* Top title */

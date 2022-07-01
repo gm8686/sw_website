@@ -4,6 +4,10 @@ console.log('STUDYING WORKS: v'+version);
 
 var existingPages = ["home"];
 
+// Course information
+const courses = ["ap-chem", "ap-calc", "ap-lang", "apush", "ap-physics"];
+const coursesUnits = [9, 9, 9, 9, 9];
+
 // Functions
 function hideAllPages() {
     // Hide existing pages
@@ -19,13 +23,11 @@ function hideAllPages() {
 }
 
 // Add links
-var courses = ["ap-chem", "ap-calc", "ap-lang", "apush", "ap-physics"];
-const unitsPerCourse = 9;
 for(let i = 0; i < courses.length; i++) {
     // Get ID
     var thislk = document.getElementById("lk-"+courses[i]);
     // Add
-    for(let j = 0; j < unitsPerCourse; j++) {
+    for(let j = 0; j < coursesUnits[i]; j++) {
         var content = (j+1) + "  ";
         let thisunitlk = document.createElement('a');
         let thisj = j;
