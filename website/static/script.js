@@ -2,9 +2,24 @@
 var version = "0.0.3";
 console.log('STUDYING WORKS: v'+version);
 
+var existingPages = ["home"];
+
+// Functions
+function hideAllPages() {
+    // Hide existing pages
+    for(let i = 0; i < existingPages.length; i++) {
+        try {
+            if(document.getElementById('pg-'+existingPages[i]).style.display != 'none') {
+                document.getElementById('pg-'+existingPages[i]).style.display = 'none';
+            }
+        } catch(err) {
+            // Pg does not exist
+        }
+    }
+}
+
 // Add links
 var courses = ["ap-chem", "ap-calc", "ap-lang", "apush", "ap-physics"];
-var existingPages = ["home"];
 const unitsPerCourse = 9;
 for(let i = 0; i < courses.length; i++) {
     // Get ID
@@ -24,15 +39,7 @@ for(let i = 0; i < courses.length; i++) {
         thisunitlk.onclick = function() {
             try {
                 // Hide existing pages
-                for(let i = 0; i < existingPages.length; i++) {
-                    try {
-                        if(document.getElementById('pg-'+existingPages[i]).style.display != 'none') {
-                            document.getElementById('pg-'+existingPages[i]).style.display = 'none';
-                        }
-                    } catch(err) {
-                        // Pg does not exist
-                    }
-                }
+                hideAllPages();
                 // Show this page
                 var divtoload = document.getElementById('pg-'+thisunitlk.dataset.pgtoload);
                 divtoload.style.display = 'block';
@@ -43,4 +50,10 @@ for(let i = 0; i < courses.length; i++) {
             }
         }
     }
+}
+
+// Home link
+document.getElementById('lk-home').onclick = function() {
+    hideAllPages();
+    document.getElementById('pg-home').style.display = 'block';
 }
