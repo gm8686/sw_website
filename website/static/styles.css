@@ -136,3 +136,35 @@ a:active {
     font-size:13px;
     background-color:#2d7d82;
 }
+
+/* Regular link class */
+.link {
+    text-decoration:underline;
+    color:#46aea3;
+    cursor:pointer;
+    font-size:12px;
+    background:none;
+    margin-left:0px;
+    padding-left:0px;
+    padding-right:0px;
+}
+.link:hover {
+    text-decoration:underline;
+    color:#2d7d82;
+    cursor:pointer;
+    font-size:12px;
+    background:none;
+    margin-left:0px;
+    padding-left:0px;
+    padding-right:0px;
+}
+.link:active {
+    text-decoration:underline;
+    color:#46aea3;
+    cursor:pointer;
+    font-size:12px;
+    background:none;
+    margin-left:0px;
+    padding-left:0px;
+    padding-right:0px;
+}
