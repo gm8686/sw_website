@@ -7,6 +7,20 @@ var existingPages = ["home"];
 // Course information
 const courses = ["ap-chem", "ap-calc", "ap-lang", "apush", "ap-physics"];
 const coursesUnits = [9, 9, 9, 9, 9];
+const coursesSections = {
+    "ap-chem": { // Course name
+        1: { // Unit number
+            1: { // Section number
+                "name": "Moles and Molar Mass", // Section name
+                "url": "none" // Video URL ("none"=default to yt channel)
+            },
+            2: {
+                "name": "Mass Spectroscopy of Elements",
+                "url": "none"
+            }
+        }
+    }
+}
 
 // Functions
 function hideAllPages() {
