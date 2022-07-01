@@ -9,16 +9,16 @@ const courses = ["ap-chem", "ap-calc", "ap-lang", "apush", "ap-physics"];
 const coursesUnits = [9, 9, 9, 9, 9];
 const coursesSections = {
     "ap-chem": { // Course name
-        1: { // Unit number
-            1: { // Section number
+        1: [ // Unit number
+            { // Section 1
                 "name": "Moles and Molar Mass", // Section name
                 "url": "none" // Video URL ("none"=default to yt channel)
             },
-            2: {
+            {
                 "name": "Mass Spectroscopy of Elements",
                 "url": "none"
             }
-        }
+        ]
     }
 }
 
@@ -36,12 +36,13 @@ function hideAllPages() {
     }
 }
 
-// Add links
+// Add links / populate page divs
 for(let i = 0; i < courses.length; i++) {
     // Get ID
     var thislk = document.getElementById("lk-"+courses[i]);
-    // Add
+    // Add links
     for(let j = 0; j < coursesUnits[i]; j++) {
+        // Link
         var content = (j+1) + "  ";
         let thisunitlk = document.createElement('a');
         let thisj = j;
@@ -65,6 +66,28 @@ for(let i = 0; i < courses.length; i++) {
                 console.log('ERR on loading page: pg-'+thisunitlk.dataset.pgtoload);
             }
         }
+        // Populate page divs
+        /*var thesesections = coursesSections[thiscoursename][thisj+1];
+        for(let t = 0; t < Object.keys(thesesections).length; i++) {
+            // Get link divider
+            try {
+                // Find this div
+                var divtoload2 = document.getElementById('pg-'+thisunitlk.dataset.pgtoload+'-links');
+                // Append
+                let thissectionlk = document.createElement('span');
+                thissectionlk.innerHTML = ''
+                let vidurl = 'https://www.youtube.com/channel/UC-9IyDlMjLaLFhD1VJpfBpg';
+                if(thesesections[t].url != 'none') {
+                    vidurl = thesesections[t].url;
+                }
+                +'<a href="'+vidurl+'" class="link">Section 1.'+t+'</a>: '+thesesections[t].name;
+                +''
+                divtoload2.append(thissectionlk);
+
+            } catch(err) {
+                // Div does not exist
+            }
+        }*/
     }
 }
 
