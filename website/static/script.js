@@ -17,6 +17,10 @@ const coursesSections = {
             {
                 "name": "Mass Spectroscopy of Elements",
                 "url": "none"
+            },
+            {
+                "name": "Elemental Composition of Pure Substances",
+                "url": "https://www.youtube.com/watch?v=iik25wqIuFo"
             }
         ]
     ]
