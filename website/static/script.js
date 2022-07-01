@@ -21,10 +21,49 @@ const coursesSections = {
             {
                 "name": "Elemental Composition of Pure Substances",
                 "url": "https://www.youtube.com/watch?v=iik25wqIuFo"
+            },
+            {
+                "name": "Mass Spectroscopy of Elements",
+                "url": "none"
+            },
+        ],
+        [ // Unit 2
+            {
+                "name": "Types of Chemical Bonds",
+                "url": "none"
+            },
+            {
+                "name": "Intramolecular Force and Potential Energy",
+                "url": "none"
+            },
+            {
+                "name": "Structure of Ionic Solids",
+                "url": "none"
+            },
+            {
+                "name": "Structure of Metals and Alloys",
+                "url": "none"
+            },
+            {
+                "name": "Lewis Diagrams",
+                "url": "none"
+            },
+            {
+                "name": "Resonance and Formal Charge",
+                "url": "none"
+            },
+            {
+                "name": "Periodic Trends",
+                "url": "none"
+            },
+            {
+                "name": "VSEPR and Bond Hybridization",
+                "url": "none"
             }
         ]
     ]
 }
+// [NOTE: Consider collapsing the above bracket pair in order to improve screen space efficiency]
 
 // Functions
 function hideAllPages() {
