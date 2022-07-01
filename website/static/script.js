@@ -4,6 +4,14 @@ console.log('STUDYING WORKS: v'+version);
 
 var existingPages = ["home"];
 
+/*
+TO DO:
+- Add videos
+- If the unit URL == "none", do not link; if the URL != "none",
+  include a small YouTube icon next to the link to indicate a video
+- Finish adding courses, units, and sections to the coursesSections array
+*/
+
 // Course information
 const courses = ["ap-chem", "ap-calc", "ap-lang", "apush", "ap-physics"];
 const coursesUnits = [9, 9, 9, 9, 9];
