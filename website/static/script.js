@@ -8,8 +8,8 @@ var existingPages = ["home"];
 const courses = ["ap-chem", "ap-calc", "ap-lang", "apush", "ap-physics"];
 const coursesUnits = [9, 9, 9, 9, 9];
 const coursesSections = {
-    "ap-chem": { // Course name
-        1: [ // Unit number
+    "ap-chem": [ // Course name
+        [ // Unit number 1
             { // Section 1
                 "name": "Moles and Molar Mass", // Section name
                 "url": "none" // Video URL ("none"=default to yt channel)
@@ -19,7 +19,7 @@ const coursesSections = {
                 "url": "none"
             }
         ]
-    }
+    ]
 }
 
 // Functions
@@ -67,27 +67,30 @@ for(let i = 0; i < courses.length; i++) {
             }
         }
         // Populate page divs
-        /*var thesesections = coursesSections[thiscoursename][thisj+1];
-        for(let t = 0; t < Object.keys(thesesections).length; i++) {
-            // Get link divider
-            try {
-                // Find this div
-                var divtoload2 = document.getElementById('pg-'+thisunitlk.dataset.pgtoload+'-links');
-                // Append
-                let thissectionlk = document.createElement('span');
-                thissectionlk.innerHTML = ''
-                let vidurl = 'https://www.youtube.com/channel/UC-9IyDlMjLaLFhD1VJpfBpg';
-                if(thesesections[t].url != 'none') {
-                    vidurl = thesesections[t].url;
+        try {
+            var thesesections = coursesSections[thiscoursename][thisj];
+            for(let t = 0; t < Object.keys(thesesections).length; t++) {
+                // Get link divider
+                try {
+                    // Find this div
+                    var divtoload2 = document.getElementById('pg-'+thisunitlk.dataset.pgtoload+'-links');
+                    // Append
+                    let thissectionlk = document.createElement('span');
+                    thissectionlk.innerHTML = ''
+                    let vidurl = 'https://www.youtube.com/channel/UC-9IyDlMjLaLFhD1VJpfBpg';
+                    if(thesesections[t].url != 'none') {
+                        vidurl = thesesections[t].url;
+                    }
+                    +'<a href="'+vidurl+'" class="link">Section 1.'+t+'</a>: '+thesesections[t].name;
+                    +''
+                    divtoload2.append(thissectionlk);
+                } catch(err) {
+                    // Div does not exist
                 }
-                +'<a href="'+vidurl+'" class="link">Section 1.'+t+'</a>: '+thesesections[t].name;
-                +''
-                divtoload2.append(thissectionlk);
-
-            } catch(err) {
-                // Div does not exist
             }
-        }*/
+        } catch(err) {
+            // Course does not exist in list
+        }
     }
 }
 
