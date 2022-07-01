@@ -10,7 +10,7 @@ for(let i = 0; i < courses.length; i++) {
     var thislk = document.getElementById("lk-"+courses[i]);
     // Add
     for(let j = 0; j < unitsPerCourse; j++) {
-        var content = "Unit "+(j+1);
+        var content = (j+1) + "  ";
         let thisunitlk = document.createElement('a');
         let thisj = j;
         let thiscoursename = courses[i];
