@@ -11,21 +11,22 @@ for(let i = 0; i < courses.length; i++) {
     // Add
     for(let j = 0; j < unitsPerCourse; j++) {
         var content = "Unit "+(j+1);
-        var thisunitlk = document.createElement('a');
-        thisunitlk.id = "lk-"+courses[i]+"-"+(j+1);
-        thisunitlk.innerText = content;
-        thislk.append(thisunitlk);
+        let thisunitlk = document.createElement('a');
         let thisj = j;
         let thiscoursename = courses[i];
-        thislk.onclick = function() {
-            let pgtoload = thiscoursename+"-"+(thisj+1);
+        let pgtoload = thiscoursename+"-"+(j+1);
+        thisunitlk.id = "lk-"+courses[i]+"-"+(j+1);
+        thisunitlk.innerText = content;
+        thisunitlk.dataset.pgtoload = pgtoload;
+        thislk.append(thisunitlk);
+        thisunitlk.onclick = function() {
             try {
-                var divtoload = document.getElementById('pg-'+pgtoload);
+                var divtoload = document.getElementById('pg-'+thisunitlk.dataset.pgtoload);
                 divtoload.style.display = 'block';
-                console.log('Page loaded: pg-'+pgtoload);
+                console.log('Page loaded: pg-'+thisunitlk.dataset.pgtoload);
             }
             catch(err) {
-                console.log('ERR on loading page: pg-'+pgtoload);
+                console.log('ERR on loading page: pg-'+thisunitlk.dataset.pgtoload);
             }
         }
     }
