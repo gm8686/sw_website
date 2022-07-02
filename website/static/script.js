@@ -10,57 +10,8 @@ TO DO:
 - If the unit URL == "none", do not link; if the URL != "none",
   include a small YouTube icon next to the link to indicate a video
 - Finish adding courses, units, and sections to the coursesSections array
+- all videos should appear below the notes per unit
 */
-
-// Course information
-const courses = ["ap-chem", "ap-calc", "ap-lang", "apush", "ap-physics"];
-const coursesUnits = [9, 9, 9, 9, 9];
-const coursesSections = {
-    "ap-chem": [ // Course name
-        [ // Unit number 1
-            { // Section 1
-                "name": "Moles and Molar Mass", // Section name
-            },
-            {
-                "name": "Mass Spectroscopy of Elements",
-            },
-            {
-                "name": "Elemental Composition of Pure Substances",
-                "url": "https://www.youtube.com/watch?v=iik25wqIuFo"
-            },
-            {
-                "name": "Mass Spectroscopy of Elements",
-            },
-        ],
-        [ // Unit 2
-            {
-                "name": "Types of Chemical Bonds",
-            },
-            {
-                "name": "Intramolecular Force and Potential Energy",
-            },
-            {
-                "name": "Structure of Ionic Solids",
-            },
-            {
-                "name": "Structure of Metals and Alloys",
-            },
-            {
-                "name": "Lewis Diagrams",
-            },
-            {
-                "name": "Resonance and Formal Charge",
-            },
-            {
-                "name": "Periodic Trends",
-            },
-            {
-                "name": "VSEPR and Bond Hybridization",
-            }
-        ]
-    ]
-}
-// [NOTE: Consider collapsing the above bracket pair in order to improve screen space efficiency]
 
 // Functions
 function hideAllPages() {
@@ -116,14 +67,32 @@ for(let i = 0; i < courses.length; i++) {
                     var divtoload2 = document.getElementById('pg-'+thisunitlk.dataset.pgtoload+'-links');
                     // Append
                     let thissectionlk = document.createElement('span');
-                    let vidurl = 'https://www.youtube.com/channel/UC-9IyDlMjLaLFhD1VJpfBpg';
+                    let vidurl = 'none'; // https://www.youtube.com/channel/UC-9IyDlMjLaLFhD1VJpfBpg
                     if(thesesections[t].url != undefined) {
                         vidurl = thesesections[t].url;
+                        thissectionlk.innerHTML = ''
+                        +'<a href="'+vidurl+'" class="link">Section 1.'+(t+1)+'</a>: '+thesesections[t].name+'<br>';
                     }
-                    thissectionlk.innerHTML = ''
-                    +'<a href="'+vidurl+'" class="link">Section 1.'+(t+1)+'</a>: '+thesesections[t].name+'<br>';
-                    +''
+                    else {
+                        thissectionlk.innerHTML = ''
+                        +'Section 1.'+(t+1)+': '+thesesections[t].name+'<br>';
+                    }
+                    
                     divtoload2.append(thissectionlk);
+                    // Create iframe for video at bottom of page?
+                    if(thesesections[t].urliframeID != undefined) {
+                        iframeID = thesesections[t].urliframeID;
+                        var divtoload3 = document.getElementById('pg-'+thisunitlk.dataset.pgtoload+'-vids');
+                        let thisiframe = document.createElement('iframe');
+                        thisiframe.width = '300';
+                        thisiframe.height = '200';
+                        thisiframe.src = 'https://www.youtube.com/embed/'+iframeID;
+                        thisiframe.title = 'YouTube video player';
+                        frameborder = "0";
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                        thisiframe.allowFullscreen = true; // Is this the correct one?
+                        divtoload3.append(thisiframe);
+                    }
                 } catch(err) {
                     // Div does not exist
                 }
