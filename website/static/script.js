@@ -20,11 +20,9 @@ const coursesSections = {
         [ // Unit number 1
             { // Section 1
                 "name": "Moles and Molar Mass", // Section name
-                "url": "none" // Video URL ("none"=default to yt channel)
             },
             {
                 "name": "Mass Spectroscopy of Elements",
-                "url": "none"
             },
             {
                 "name": "Elemental Composition of Pure Substances",
@@ -32,41 +30,32 @@ const coursesSections = {
             },
             {
                 "name": "Mass Spectroscopy of Elements",
-                "url": "none"
             },
         ],
         [ // Unit 2
             {
                 "name": "Types of Chemical Bonds",
-                "url": "none"
             },
             {
                 "name": "Intramolecular Force and Potential Energy",
-                "url": "none"
             },
             {
                 "name": "Structure of Ionic Solids",
-                "url": "none"
             },
             {
                 "name": "Structure of Metals and Alloys",
-                "url": "none"
             },
             {
                 "name": "Lewis Diagrams",
-                "url": "none"
             },
             {
                 "name": "Resonance and Formal Charge",
-                "url": "none"
             },
             {
                 "name": "Periodic Trends",
-                "url": "none"
             },
             {
                 "name": "VSEPR and Bond Hybridization",
-                "url": "none"
             }
         ]
     ]
@@ -128,7 +117,7 @@ for(let i = 0; i < courses.length; i++) {
                     // Append
                     let thissectionlk = document.createElement('span');
                     let vidurl = 'https://www.youtube.com/channel/UC-9IyDlMjLaLFhD1VJpfBpg';
-                    if(thesesections[t].url != 'none') {
+                    if(thesesections[t].url != undefined) {
                         vidurl = thesesections[t].url;
                     }
                     thissectionlk.innerHTML = ''
