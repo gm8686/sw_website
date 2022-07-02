@@ -6,6 +6,18 @@ const coursesSections = {
         [ // Unit number 1
             { // Section 1
                 "name": "Moles and Molar Mass", // Section name
+                "practiceProblems": [ // Practice problems array
+                    {
+                        "q": "How many molecules are in one mol?", // Question
+                        "as": ["6.02", "0.08206", "6.02x10^23", "4.184"], // Answers
+                        "a_correct": 2 // Correct answer index
+                    },
+                    {
+                        "q": "Using your ptable, what is the molar mass of Lithium?",
+                        "as": ["3", "6.94g/mol", "13.88g/mol", "Li"],
+                        "a_correct": 1
+                    }
+                ]
             },
             {
                 "name": "Mass Spectroscopy of Elements",

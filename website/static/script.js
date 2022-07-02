@@ -7,10 +7,8 @@ var existingPages = ["home"];
 /*
 TO DO:
 - Add videos
-- If the unit URL == "none", do not link; if the URL != "none",
-  include a small YouTube icon next to the link to indicate a video
 - Finish adding courses, units, and sections to the coursesSections array
-- all videos should appear below the notes per unit
+- practice problems? (randomly select based on those in courseInfo.js)
 */
 
 // Functions
@@ -71,7 +69,9 @@ for(let i = 0; i < courses.length; i++) {
                     if(thesesections[t].url != undefined) {
                         vidurl = thesesections[t].url;
                         thissectionlk.innerHTML = ''
-                        +'<a href="'+vidurl+'" class="link">Section 1.'+(t+1)+'</a>: '+thesesections[t].name+'<br>';
+                        +'<a href="'+vidurl+'" class="link">'
+                        +'<img src="static/images/icon-yt.svg" width="12px" height="12px">'
+                        +'Section 1.'+(t+1)+'</a>: '+thesesections[t].name+'<br>';
                     }
                     else {
                         thissectionlk.innerHTML = ''
