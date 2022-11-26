@@ -20,17 +20,19 @@ const coursesSections = {
                 ]
             },
             {
-                "name": "Mass Spectroscopy of Elements",
-                "url": "https://www.youtube.com/watch?v=iRGfiIhM5NU",
-                "urliframeID": "iRGfiIhM5NU"
+                "name": "Mass Spectroscopy of Elements", // Name of video
+                "url": "https://www.youtube.com/watch?v=_yZRS9lJCbA", // URL
+                "urliframeID": "_yZRS9lJCbA" // ID to use in iframe (typically same as URL ending)
             },
             {
-                "name": "Elemental Composition of Pure Substances",
-                "url": "https://www.youtube.com/watch?v=iik25wqIuFo",
-                "urliframeID": "iik25wqIuFo"
+                "name": "Identifying Reactions",
+                "url": "https://www.youtube.com/watch?v=g2v9dVRf5Ow",
+                "urliframeID": "g2v9dVRf5Ow"
             },
             {
-                "name": "Mass Spectroscopy of Elements",
+                "name": "Gas Laws",
+                "url": "https://www.youtube.com/watch?v=cf33Vr6l7k0",
+                "ufliframeID": "cf33Vr6l7k0"
             },
         ],
         [ // Unit 2
